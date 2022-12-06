@@ -30,7 +30,7 @@ function createEmployeeProfile(employee){
             </h2>
             <div class="employeeInfo">
                 <p>ID: ${employee.id}</p>
-                <p>Email: <a href="${employee.email}">${employee.email}</a></p>
+                <p>Email: <a href="mailto:${employee.email}">${employee.email}</a></p>
                 <p>${uniqueInfo}</p>
             </div>
         </div>`

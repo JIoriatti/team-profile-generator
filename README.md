@@ -4,6 +4,9 @@ Each team profile includes the employee's name, ID number, email, and either off
 
 This application allows for teams of up to 4 to be built consisting of a manager, one or two engineers, and an intern.
 
-This application was built for node.js.
+This application was built for node.js.  
+
+[Walkthrough-Video](./Walkthrough.mp4)
 
 ![Screenshot](./teamProfileSS.PNG)
+
