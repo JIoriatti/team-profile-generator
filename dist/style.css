@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: aliceblue;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10em;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(12, 20, 56);
+    color: whitesmoke;
+    height: auto;
+    font-size: 60px;
+    padding: 0.25em;
+}
+.main-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 70%;
+}
+.employee{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: rgba(63, 61, 77, 0.668);
+    margin: 1em;
+    padding: 0;
+    box-shadow: 1px 1px 10px black;
+    min-width: 20em;
+}
+.employeeHeader{
+    background-color: lightblue;
+    height: 33%;
+}
+.employee h1{
+    color: whitesmoke;
+    border-radius: 5px 5px 0 0;
+    background-color: rgb(12, 20, 56);
+    width: auto;
+    text-align: center;
+    font-size: 32px;
+    margin: 0;
+    padding: 0.25rem;
+}
+.employee h2{
+    color: whitesmoke;
+    width: auto;
+    text-align: center;
+    font-size: 24px;
+    margin: 0.5rem;
+    padding: 0.25rem;
+}
+.employeeInfo{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.employeeInfo p{
+    padding: 0.25em;
+    padding-left: 1em;
+    font-size: 16px;
+    color: whitesmoke;
+}

@@ -109,7 +109,41 @@ const engineerQuestions = [
 
     }
 ];
-
+const eng2Questions = [
+    {
+        type: 'input',
+        name: 'engName2',
+        message: 'Please enter the name of your second engineer.',
+        when(input){
+            return input.addEngineer === true
+        }
+    },
+    {
+        type: 'input',
+        name: 'engID2',
+        message: 'Please enter the ID of your second engineer.',
+        when(input){
+            return input.addEngineer === true
+        }
+    },
+    {
+        type: 'input',
+        name: 'engEmail2',
+        message: 'Please enter the email of your second engineer.',
+        when(input){
+            return input.addEngineer === true
+        }
+    },
+    {
+        type: 'input',
+        name: 'engGithub2',
+        message: 'Please enter the GitHub profile of your second engineer.',
+        when(input){
+            return input.addEngineer === true
+        }
+    }
+]
+//Init function to run the inquirer prompt and gather user input.
 function init(){
     inquirer
     .prompt([
@@ -133,6 +167,18 @@ function init(){
         internQuestions[2],
         internQuestions[3],
         {
+            type: 'confirm',
+            name: 'addEngineer',
+            message: "Would you like to add another engineer?",
+            when(input){
+                return  input.addEmployee === "Engineer";
+            }
+        },
+        eng2Questions[0],
+        eng2Questions[1],
+        eng2Questions[2],
+        eng2Questions[3],
+        {
             type:'list',
             name: 'addLastEmployee',
             message: function(input){
@@ -151,8 +197,13 @@ function init(){
                     return ["Engineer", "Finish Team Setup"];
                 }
             },
-            default: "Finish Team Setup"
+            default: "Finish Team Setup",
+            when(input){
+                return input.addEmployee !== "Finish Team Setup";
+            }
         },
+        //Since the prompt method is iterating through the array of questions passed, even though the conditional statement within these questions is met, they need to be re-passed through to show up again.
+        //Tried to avoid this but I couldn't think of a way to circumvent it.
         engineerQuestions[0],
         engineerQuestions[1],
         engineerQuestions[2],
@@ -160,12 +211,24 @@ function init(){
         internQuestions[0],
         internQuestions[1],
         internQuestions[2],
-        internQuestions[3]
+        internQuestions[3],
+        {
+            type: 'confirm',
+            name: 'addEngineer',
+            message: "Would you like to add another engineer?",
+            when(input){
+                return  input.addLastEmployee === "Engineer";
+            }
+        },
+        eng2Questions[0],
+        eng2Questions[1],
+        eng2Questions[2],
+        eng2Questions[3]
     ])
         
     .then((answers)=>{
         console.log(answers);
-        // writeFile("index.html", answers);
+        writeFile('./dist/index.html', answers);
     })
 
     
